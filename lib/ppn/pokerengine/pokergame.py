@@ -1682,7 +1682,8 @@ class PokerGame:
         else:
             self.error("%d alreay in seats_left" % self.serial2player[serial].seat)
         # Record ratholing
-        self.ratholes[serial] = (self.serial2player[serial].money, datetime.now())
+        if (self.serial2player[serial].money):
+            self.ratholes[serial] = (self.serial2player[serial].money, datetime.now())
         #
         # Forget about him
         #
